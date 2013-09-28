@@ -35,9 +35,9 @@ public class CampaignBO implements Serializable, CampaignBOI {
 	 * .rpg.entity.Campaign)
 	 */
 	// TODO Para testes
-	
+	@Override
 	public Campaign insertCampaign(Campaign c) {
-		/*
+		
 		if (c == null) {
 			c = new Campaign();
 			return c;
@@ -59,21 +59,23 @@ public class CampaignBO implements Serializable, CampaignBOI {
 		}
 
 		return campaignDao.insert(c);
-		*/
-		return new Campaign();
+
 	}
 	
 	// TODO Para testes
+	@Override
 	public Campaign searchCampaignById(int id) {
 		return campaignDao.findById(id);
 	}
 
 	// TODO Para testes
+	@Override
 	public void removeCampaign(Campaign c) {
 		campaignDao.remove(c);
 	}
 
 	// TODO Para testes
+	@Override
 	public void updateCampaign(Campaign c) {
 		campaignDao.update(c);
 	}

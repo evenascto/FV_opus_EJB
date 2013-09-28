@@ -42,10 +42,10 @@ public class Campaign implements Serializable {
 	private Byte[] img;
 
 	private String title;
-/*
+
 	@OneToMany(mappedBy = "campaign")
 	private List<Scenario> scenarios;
-*/
+
 	public Campaign() {
 	}
 
@@ -88,7 +88,7 @@ public class Campaign implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-/*
+
 	public List<Scenario> getScenarios() {
 		return scenarios;
 	}
@@ -96,7 +96,7 @@ public class Campaign implements Serializable {
 	public void setScenarios(List<Scenario> scenarios) {
 		this.scenarios = scenarios;
 	}
-*/
+
 	public Integer getId() {
 		return id;
 	}

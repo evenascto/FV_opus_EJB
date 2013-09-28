@@ -1,6 +1,5 @@
 package com.futurevision.rpg.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
