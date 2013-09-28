@@ -6,18 +6,20 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
+
 import com.futurevision.rpg.bo.inter.CampaignBOI;
 import com.futurevision.rpg.dao.impl.CampaignDAO;
 import com.futurevision.rpg.dao.inter.CampaignDAOI;
 import com.futurevision.rpg.entity.*;
 
+@Stateless
 public class CampaignBO implements Serializable, CampaignBOI {
 	
 	@EJB
 	private CampaignDAOI campaignDao;
 
 	public CampaignBO() {
-		campaignDao = new CampaignDAO();
+		/*campaignDao = new CampaignDAO();*/
 	}
 
 	@Override
