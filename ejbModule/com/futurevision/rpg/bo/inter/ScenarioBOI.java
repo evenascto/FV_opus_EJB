@@ -16,10 +16,7 @@ public interface ScenarioBOI {
 
 	public abstract Scenario getScenarioByScenarioSelection(
 			ScenarioSelection scenarioSelection);
-	
-	
-	
-	
-	
+
+	ScenarioSelection getLuckScenarioSelection();
 
 }

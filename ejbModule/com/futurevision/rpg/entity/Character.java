@@ -1,6 +1,7 @@
 package com.futurevision.rpg.entity;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -160,5 +161,16 @@ public class Character implements Serializable {
 	public void setAlive(boolean alive) {
 		this.alive = alive;
 	}
+
+	@Override
+	public String toString() {
+		return "Character [id=" + id + ", audioName="
+				+ Arrays.toString(audioName) + ", img=" + Arrays.toString(img)
+				+ ", name=" + name + ", xp=" + xp + ", luck=" + luck
+				+ ", life=" + life + ", dexterity=" + dexterity + ", gameUser="
+				+ gameUser + ", chaItes=" + chaItes + ", vestiment="
+				+ vestiment + ", alive=" + alive + "]";
+	}
+	
 
 }

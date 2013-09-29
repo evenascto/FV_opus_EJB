@@ -1,8 +1,9 @@
 package com.futurevision.rpg.bo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import com.futurevision.rpg.bo.inter.CharacterBOI;
@@ -15,14 +16,13 @@ import com.futurevision.rpg.entity.ScenarioSelection;
 
 @Stateless
 public class ScenarioBO implements Serializable, ScenarioBOI {
-	@EJB
 	private ScenarioDAOI scenarioDao;
-	@EJB
 	private CharacterBOI characterBO;
+	private ScenarioSelection scenarioSelection;
 
 	public ScenarioBO() {
-		/*scenarioDao = new ScenarioDAO();*/
-		/*characterBO = new CharacterBO();*/
+		scenarioDao = new ScenarioDAO();
+		characterBO = new CharacterBO();
 	}
 
 	/*
@@ -33,7 +33,8 @@ public class ScenarioBO implements Serializable, ScenarioBOI {
 	// TODO Para testes
 	@Override
 	public Scenario flee(Scenario s, Character c) {
-		if (!s.getFlee()) return s;
+		if (!s.getFlee())
+			return s;
 		characterBO.receiveDamage(c, 2);
 		return getScenarioByScenarioSelection(s.getScenarioSelections().get(0));
 	}
@@ -47,6 +48,7 @@ public class ScenarioBO implements Serializable, ScenarioBOI {
 	// TODO Para testes
 	@Override
 	public Scenario getScenarioById(Integer id) {
+
 		return scenarioDao.findById(id);
 	}
 
@@ -62,6 +64,15 @@ public class ScenarioBO implements Serializable, ScenarioBOI {
 	public Scenario getScenarioByScenarioSelection(
 			ScenarioSelection scenarioSelection) {
 		return getScenarioById(scenarioSelection.getScenario().getId());
+	}
+
+	@Override
+	public ScenarioSelection getLuckScenarioSelection() {
+		if (scenarioSelection == null) {
+			scenarioSelection = new ScenarioSelection();
+			scenarioSelection.setDescription("Teste a sua sorte");
+		}
+		return scenarioSelection;
 	}
 
 }
